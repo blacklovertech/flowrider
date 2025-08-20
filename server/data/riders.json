@@ -1,0 +1,84 @@
+[
+  {
+    "id": "R100",
+    "name": "Rahul",
+    "location": [12.971, 77.594],
+    "preferences": ["grocery", "courier"],
+    "status": "available",
+    "rating": 4.8
+  },
+  {
+    "id": "R101",
+    "name": "Priya",
+    "location": [12.978, 77.64],
+    "preferences": ["food"],
+    "status": "available",
+    "rating": 4.7
+  },
+  {
+    "id": "R102",
+    "name": "Amit",
+    "location": [12.965, 77.62],
+    "preferences": ["grocery", "food", "courier"],
+    "status": "available",
+    "rating": 4.9
+  },
+  {
+    "id": "R103",
+    "name": "Sneha",
+    "location": [12.989, 77.58],
+    "preferences": ["courier"],
+    "status": "available",
+    "rating": 4.6
+  },
+  {
+    "id": "R104",
+    "name": "Vikram",
+    "location": [12.955, 77.61],
+    "preferences": ["grocery", "food"],
+    "status": "available",
+    "rating": 4.5
+  },
+  {
+    "id": "R105",
+    "name": "Neha",
+    "location": [12.982, 77.63],
+    "preferences": ["food", "courier"],
+    "status": "available",
+    "rating": 4.8
+  },
+  {
+    "id": "R106",
+    "name": "Karan",
+    "location": [12.975, 77.6],
+    "preferences": ["grocery"],
+    "status": "available",
+    "rating": 4.4
+  },
+  {
+    "id": "R107",
+    "name": "Pooja",
+    "location": [12.968, 77.59],
+    "preferences": ["food", "grocery"],
+    "status": "available",
+    "rating": 4.7
+  },
+  {
+    "id": "R108",
+    "name": "Arjun",
+    "location": [12.961, 77.57],
+    "preferences": ["courier", "grocery"],
+    "status": "available",
+    "rating": 4.6
+  },
+  {
+    "id": "R109", 
+    "name": "Meera",
+    "location": [12.99, 77.62],
+    "preferences": ["food"],
+    "status": "available",
+    "rating": 4.9
+  }
+]
+
+

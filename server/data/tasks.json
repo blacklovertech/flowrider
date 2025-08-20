@@ -1,0 +1,33 @@
+[
+  {
+    "id": "task_1001",
+    "platform": "QuickCart",
+    "category": "grocery",
+    "pickup_location": [12.972, 77.596],
+    "dropoff_location": [12.985, 77.645],
+    "status": "pending",
+    "estimated_value": 60,
+    "created_at": 1734710400000
+  },
+  {
+    "id": "task_1002",
+    "platform": "Swiggy",
+    "category": "food",
+    "pickup_location": [12.97, 77.59],
+    "dropoff_location": [12.96, 77.62],
+    "status": "pending",
+    "estimated_value": 80,
+    "created_at": 1734710500000
+  },
+  {
+    "id": "task_1003",
+    "platform": "Dunzo",
+    "category": "courier",
+    "pickup_location": [12.965, 77.62],
+    "dropoff_location": [12.955, 77.61],
+    "status": "pending",
+    "estimated_value": 50,
+    "created_at": 1734710600000
+  }
+]
+
