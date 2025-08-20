@@ -1260,40 +1260,6 @@ const APIDocumentation = () => {
   );
 };
 
-const CostStructure = () => {
-  const totalRevenue = 1000000; // ₹10,00,000 = 10L/month
-
-  const costs = [
-    {
-      title: "Rider Compensation",
-      percent: 60,
-      color: "bg-blue-600",
-      breakdown: [
-        { label: "Base Salary + Benefits", percent: 40 },
-        { label: "Performance Bonuses", percent: 20 },
-      ],
-    },
-    {
-      title: "Platform Operations",
-      percent: 25,
-      color: "bg-teal-600",
-      breakdown: [
-        { label: "Infrastructure & APIs", percent: 15 },
-        { label: "Support & Monitoring", percent: 10 },
-      ],
-    },
-    {
-      title: "Growth & Development",
-      percent: 15,
-      color: "bg-green-600",
-      breakdown: [
-        { label: "R&D and Features", percent: 8 },
-        { label: "Marketing & Sales", percent: 7 },
-      ],
-    },
-  ];
-
-  
 // Business Model Component
 const BusinessModel = () => {
   return (
@@ -1363,59 +1329,91 @@ const BusinessModel = () => {
           </div>
 
           {/* Cost Structure */}
-         <div>
-      {/* Section Header */}
-      <h3 className="text-2xl font-semibold mb-8 flex items-center gap-3">
-        <Briefcase className="h-6 w-6 text-teal-600" />
-        Cost Structure
-      </h3>
+<div>
+  <h3 class="text-2xl font-semibold mb-8 flex items-center gap-3">
+    <svg class="h-6 w-6 text-teal-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M16 12H8m8 0a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+    Cost Structure
+  </h3>
 
-      <div className="space-y-6">
-        {costs.map((cost) => {
-          const costValue = (cost.percent / 100) * totalRevenue;
-          return (
-            <div key={cost.title} className="bg-white p-6 rounded-xl shadow-lg">
-              <div className="flex items-center justify-between mb-4">
-                <h4 className="font-semibold">{cost.title}</h4>
-                <span className="text-sm text-gray-500">
-                  {cost.percent}% of revenue
-                </span>
-              </div>
-
-              <div className="space-y-3">
-                {cost.breakdown.map((item) => {
-                  const itemValue = (item.percent / 100) * totalRevenue;
-                  return (
-                    <div
-                      key={item.label}
-                      className="flex justify-between text-sm"
-                    >
-                      <span>{item.label}</span>
-                      <span className="font-medium">
-                        ₹{(itemValue / 100000).toFixed(2)}L/month
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Progress Bar */}
-              <div className="w-full bg-gray-200 rounded-full h-2 mt-3">
-                <div
-                  className={`${cost.color} h-2 rounded-full`}
-                  style={{ width: `${cost.percent}%` }}
-                />
-              </div>
-
-              {/* Total for this block */}
-              <div className="mt-2 text-right text-sm font-medium text-gray-700">
-                Total: ₹{(costValue / 100000).toFixed(2)}L/month
-              </div>
-            </div>
-          );
-        })}
+  <div class="space-y-6">
+    <!-- Rider Compensation -->
+    <div class="bg-white p-6 rounded-xl shadow-lg">
+      <div class="flex items-center justify-between mb-4">
+        <h4 class="font-semibold">Rider Compensation</h4>
+        <span class="text-sm text-gray-500">60% of revenue</span>
+      </div>
+      <div class="space-y-3">
+        <div class="flex justify-between">
+          <span class="text-sm">Base Salary + Benefits</span>
+          <span class="font-medium">₹12,00,000 / month</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-sm">Performance Bonuses</span>
+          <span class="font-medium">₹3,60,000 / month</span>
+        </div>
+      </div>
+      <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
+        <div class="bg-blue-600 h-2 rounded-full" style="width: 60%;"></div>
       </div>
     </div>
+
+    <!-- Platform Operations -->
+    <div class="bg-white p-6 rounded-xl shadow-lg">
+      <div class="flex items-center justify-between mb-4">
+        <h4 class="font-semibold">Platform Operations</h4>
+        <span class="text-sm text-gray-500">25% of revenue</span>
+      </div>
+      <div class="space-y-3">
+        <div class="flex justify-between">
+          <span class="text-sm">Infrastructure & APIs</span>
+          <span class="font-medium">₹3,90,000 / month</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-sm">Support & Monitoring</span>
+          <span class="font-medium">₹2,60,000 / month</span>
+        </div>
+      </div>
+      <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
+        <div class="bg-teal-600 h-2 rounded-full" style="width: 25%;"></div>
+      </div>
+    </div>
+
+    <!-- Growth & Development -->
+    <div class="bg-white p-6 rounded-xl shadow-lg">
+      <div class="flex items-center justify-between mb-4">
+        <h4 class="font-semibold">Growth & Development</h4>
+        <span class="text-sm text-gray-500">15% of revenue</span>
+      </div>
+      <div class="space-y-3">
+        <div class="flex justify-between">
+          <span class="text-sm">R&D and Features</span>
+          <span class="font-medium">₹2,10,000 / month</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-sm">Marketing & Sales</span>
+          <span class="font-medium">₹1,80,000 / month</span>
+        </div>
+      </div>
+      <div class="w-full bg-gray-200 rounded-full h-2 mt-3">
+        <div class="bg-green-600 h-2 rounded-full" style="width: 15%;"></div>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-inner">
+      <div class="flex items-center justify-between mb-2">
+        <h4 class="font-semibold">Total Revenue</h4>
+        <span class="font-medium text-green-700">₹26,00,000 / month</span>
+      </div>
+      <div class="flex items-center justify-between">
+        <h4 class="font-semibold">Total Costs</h4>
+        <span class="font-medium text-red-600">₹26,00,000 / month (Breakeven)</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 
         {/* Key Differentiators */}
