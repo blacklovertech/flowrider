@@ -1,4 +1,4 @@
-SuperFleet Technologies — FounderX Competition Deliverables
+FLow Rider Technologies — FounderX Competition Deliverables
 
 1. Primary Market Research (PMR) Plan
 
