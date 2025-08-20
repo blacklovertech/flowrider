@@ -1410,7 +1410,7 @@ const BusinessModel = () => {
     </div>
   </div>
 </div>
-
+</div>
 
         {/* Key Differentiators */}
         <div className="mb-16">
