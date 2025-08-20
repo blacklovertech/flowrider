@@ -1260,6 +1260,40 @@ const APIDocumentation = () => {
   );
 };
 
+const CostStructure = () => {
+  const totalRevenue = 1000000; // ₹10,00,000 = 10L/month
+
+  const costs = [
+    {
+      title: "Rider Compensation",
+      percent: 60,
+      color: "bg-blue-600",
+      breakdown: [
+        { label: "Base Salary + Benefits", percent: 40 },
+        { label: "Performance Bonuses", percent: 20 },
+      ],
+    },
+    {
+      title: "Platform Operations",
+      percent: 25,
+      color: "bg-teal-600",
+      breakdown: [
+        { label: "Infrastructure & APIs", percent: 15 },
+        { label: "Support & Monitoring", percent: 10 },
+      ],
+    },
+    {
+      title: "Growth & Development",
+      percent: 15,
+      color: "bg-green-600",
+      breakdown: [
+        { label: "R&D and Features", percent: 8 },
+        { label: "Marketing & Sales", percent: 7 },
+      ],
+    },
+  ];
+
+  
 // Business Model Component
 const BusinessModel = () => {
   return (
@@ -1329,75 +1363,60 @@ const BusinessModel = () => {
           </div>
 
           {/* Cost Structure */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-8 flex items-center gap-3">
-              <Briefcase className="h-6 w-6 text-teal-600" />
-              Cost Structure
-            </h3>
-            
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <div className="flex items-center justify-between mb-4">
-                  <h4 className="font-semibold">Rider Compensation</h4>
-                  <span className="text-sm text-gray-500">60% of revenue</span>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-sm">Base Salary + Benefits</span>
-                    <span className="font-medium">₹6L/month</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-sm">Performance Bonuses</span>
-                    <span className="font-medium">₹1.5L/month</span>
-                  </div>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2 mt-3">
-                  <div className="bg-blue-600 h-2 rounded-full" style={{ width: '60%' }}></div>
-                </div>
+         <div>
+      {/* Section Header */}
+      <h3 className="text-2xl font-semibold mb-8 flex items-center gap-3">
+        <Briefcase className="h-6 w-6 text-teal-600" />
+        Cost Structure
+      </h3>
+
+      <div className="space-y-6">
+        {costs.map((cost) => {
+          const costValue = (cost.percent / 100) * totalRevenue;
+          return (
+            <div key={cost.title} className="bg-white p-6 rounded-xl shadow-lg">
+              <div className="flex items-center justify-between mb-4">
+                <h4 className="font-semibold">{cost.title}</h4>
+                <span className="text-sm text-gray-500">
+                  {cost.percent}% of revenue
+                </span>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <div className="flex items-center justify-between mb-4">
-                  <h4 className="font-semibold">Platform Operations</h4>
-                  <span className="text-sm text-gray-500">25% of revenue</span>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-sm">Infrastructure & APIs</span>
-                    <span className="font-medium">₹1.8L/month</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-sm">Support & Monitoring</span>
-                    <span className="font-medium">₹1.2L/month</span>
-                  </div>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2 mt-3">
-                  <div className="bg-teal-600 h-2 rounded-full" style={{ width: '25%' }}></div>
-                </div>
+              <div className="space-y-3">
+                {cost.breakdown.map((item) => {
+                  const itemValue = (item.percent / 100) * totalRevenue;
+                  return (
+                    <div
+                      key={item.label}
+                      className="flex justify-between text-sm"
+                    >
+                      <span>{item.label}</span>
+                      <span className="font-medium">
+                        ₹{(itemValue / 100000).toFixed(2)}L/month
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-lg">
-                <div className="flex items-center justify-between mb-4">
-                  <h4 className="font-semibold">Growth & Development</h4>
-                  <span className="text-sm text-gray-500">15% of revenue</span>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-sm">R&D and Features</span>
-                    <span className="font-medium">₹1L/month</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-sm">Marketing & Sales</span>
-                    <span className="font-medium">₹0.8L/month</span>
-                  </div>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2 mt-3">
-                  <div className="bg-green-600 h-2 rounded-full" style={{ width: '15%' }}></div>
-                </div>
+              {/* Progress Bar */}
+              <div className="w-full bg-gray-200 rounded-full h-2 mt-3">
+                <div
+                  className={`${cost.color} h-2 rounded-full`}
+                  style={{ width: `${cost.percent}%` }}
+                />
+              </div>
+
+              {/* Total for this block */}
+              <div className="mt-2 text-right text-sm font-medium text-gray-700">
+                Total: ₹{(costValue / 100000).toFixed(2)}L/month
               </div>
             </div>
-          </div>
-        </div>
+          );
+        })}
+      </div>
+    </div>
+
 
         {/* Key Differentiators */}
         <div className="mb-16">
